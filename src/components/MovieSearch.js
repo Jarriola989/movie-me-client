@@ -1,9 +1,15 @@
 import React from "react";
-
+import { MOVIEDB_API_KEY } from "../constants";
 const MovieSearch = () => {
   const searchMovies = async (e) => {
     e.preventDefault();
     console.log("searching...");
+    let query = "jurassic";
+
+    const url = `https://api.themoviedb.org/3/movie/550?api_key=${MOVIEDB_API_KEY}&language=en-US&query=${query}`;
+    const res = await fetch(url);
+    const data = await res.json();
+    console.log(data);
   };
 
   return (
