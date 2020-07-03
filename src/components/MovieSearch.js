@@ -9,16 +9,12 @@ const MovieSearch = () => {
   const searchMovies = async (e) => {
     e.preventDefault();
     console.log("searching...");
-    console.log(query);
     const url = `https://api.themoviedb.org/3/search/movie?api_key=${MOVIEDB_API_KEY}&language=en-US&query=${query}&page=1&include_adult=false`;
 
     try {
       const res = await fetch(url);
       const data = await res.json();
       setMovies(data.results);
-      // console.log(data);
-      // console.log(data.results);
-      // console.log(movies);
     } catch (err) {
       console.error(err);
     }
