@@ -11,6 +11,7 @@ body {
   padding: 0;
   background-color: rgb(244, 244, 244);
   color: #333;
+  font-family: sans-serif;
 }
 
 p {
@@ -23,8 +24,16 @@ small {
 
 .container {
   margin: 0 auto;
-  max-width: 1000px;
+  width: 100%;
   padding: 40px;
+  background-image: linear-gradient(
+    to top right,
+    rgb(45, 43, 63),
+    rgb(32, 47, 70),
+    rgb(45, 43, 63)
+  );
+  height: 100vh;
+  overflow-y: scroll;
 }
 
 .title {
@@ -81,23 +90,47 @@ small {
 }
 
 .card-list {
+  margin: auto;
   margin-top: 4rem;
+  text-align: center;
+  /* border: solid white; */
 }
 
 .card {
-  padding: 2rem 4rem;
   border-radius: 10px;
-  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.25);
-  margin-bottom: 2rem;
-  background-color: white;
+  height: auto;
+  width: 23rem;
+  /* border: solid white; */
+  margin: 2rem;
+  display: inline-block;
+}
+
+.card--content {
+  color: rgb(156, 161, 175);
+  text-align: left;
+  margin-left: 5px;
 }
 
 .card--title {
-  margin-bottom: 0.5rem;
   font-size: 3.2rem;
+  word-wrap: break-word;
+  font-size: 1.6rem;
+  margin-bottom: 0;
 }
 
+.card--release {
+  margin-top: 2px;
+}
+
+.card--image-box {
+  background-color: rgb(55, 65, 81);
+  padding: 2rem;
+  display: inline-block;
+  border-radius: 1rem;
+}
 .card--image {
   margin: 0 auto;
   display: block;
+  border-radius: 3px;
+  background-color: rgb(55, 65, 81);
 }

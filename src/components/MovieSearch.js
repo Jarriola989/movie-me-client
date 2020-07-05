@@ -21,7 +21,7 @@ const MovieSearch = () => {
   };
 
   return (
-    <>
+    <div className="container">
       <form className="search-form" onSubmit={searchMovies}>
         <label className="search-label" htmlFor="search-query">
           Movie Name
@@ -45,7 +45,7 @@ const MovieSearch = () => {
             <MovieCard movie={movie} key={movie.id} />
           ))}
       </div>
-    </>
+    </div>
   );
 };
 
