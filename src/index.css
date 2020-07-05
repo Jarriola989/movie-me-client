@@ -98,27 +98,6 @@ small {
   background-color: rgba(156, 161, 175, 0.5);
 }
 
-@media (min-width: 786px) {
-  .outer-grid {
-    display: grid;
-    grid-template-columns: 30vh auto;
-  }
-  .search-form {
-    grid-template-columns: auto 1fr auto;
-    column-gap: 1rem;
-    align-items: center;
-  }
-  .search-input {
-    margin-bottom: 0;
-  }
-  .search-label {
-    margin-bottom: 0;
-  }
-  .search-btn {
-    grid-column: auto;
-  }
-}
-
 .card-list {
   margin: auto;
   margin-top: 4rem;
@@ -165,8 +144,16 @@ small {
   background-color: rgb(55, 65, 81);
 }
 
+.outer-grid {
+  grid-template-columns: 100%;
+}
+
 .menu {
   background-color: rgb(35, 41, 58);
+  position: absolute;
+  height: 100%;
+  width: 50vh;
+  transform: translateX(-100%);
 }
 
 .logo {
@@ -198,4 +185,31 @@ small {
 .menu--links li.active {
   color: rgb(102, 221, 217);
   border-right: solid 4px rgb(102, 221, 217);
+}
+
+@media (min-width: 786px) {
+  .outer-grid {
+    display: grid;
+    grid-template-columns: 30vh auto;
+  }
+  .search-form {
+    grid-template-columns: auto 1fr auto;
+    column-gap: 1rem;
+    align-items: center;
+  }
+  .search-input {
+    margin-bottom: 0;
+  }
+  .search-label {
+    margin-bottom: 0;
+  }
+  .search-btn {
+    grid-column: auto;
+  }
+  .menu {
+    position: relative;
+    grid-column: 1/2;
+    width: 100%;
+    transform: translateX(0%);
+  }
 }
