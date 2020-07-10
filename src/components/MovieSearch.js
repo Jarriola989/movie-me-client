@@ -19,17 +19,6 @@ const MovieSearch = () => {
     }
   }, []);
 
-  // const loadNewMovies = async () => {
-  //   const url = `https://api.themoviedb.org/3/movie?/popular/api_key=${MOVIEDB_API_KEY}&language=en-US`;
-  //   try {
-  //     const res = await fetch(url);
-  //     const data = await res.json();
-  //     setMovies(data.results);
-  //   } catch (err) {
-  //     console.error(err);
-  //   }
-  // };
-
   const searchMovies = async (e) => {
     e.preventDefault();
     console.log("searching...");
