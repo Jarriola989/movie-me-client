@@ -1,10 +1,15 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faFilm, faTv } from "@fortawesome/free-solid-svg-icons";
+import {
+  faFilm,
+  faTv,
+  faNetworkWired,
+} from "@fortawesome/free-solid-svg-icons";
 import {
   faCompass,
   faUser,
   faTimesCircle,
+  faPlayCircle,
 } from "@fortawesome/free-regular-svg-icons";
 import { Link } from "react-router-dom";
 const Menu = () => {
@@ -23,6 +28,9 @@ const Menu = () => {
         <li>
           <FontAwesomeIcon icon={faTv} /> &nbsp; My Movies
         </li>
+        <li>
+          <FontAwesomeIcon icon={faNetworkWired} /> &nbsp; Friends
+        </li>
         <br />
         <li>
           <Link to="/create-account" className="menu--link">
@@ -30,7 +38,14 @@ const Menu = () => {
           </Link>
         </li>
         <li>
-          <FontAwesomeIcon icon={faUser} /> &nbsp; My Account
+          <Link to="my-account" className="menu--link">
+            <FontAwesomeIcon icon={faUser} /> &nbsp; My Account
+          </Link>
+        </li>
+        <li>
+          <Link to="sign-in" className="menu--link">
+            <FontAwesomeIcon icon={faPlayCircle} /> &nbsp; Sign In
+          </Link>
         </li>
         <li>
           <FontAwesomeIcon icon={faTimesCircle} /> &nbsp; Logout
