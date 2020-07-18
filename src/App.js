@@ -7,7 +7,6 @@ import CreateAccount from "./components/CreateAccount";
 function App() {
   return (
     <div className="outer-grid">
-      {/* <h1 className="title">Movie Me</h1> */}
       <BrowserRouter>
         <Route path="/" component={Menu} />
         <Route exact path="/" component={MovieSearch} />

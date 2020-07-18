@@ -6,6 +6,7 @@ import {
   faUser,
   faTimesCircle,
 } from "@fortawesome/free-regular-svg-icons";
+import { Link } from "react-router-dom";
 const Menu = () => {
   return (
     <div className="menu">
@@ -15,12 +16,19 @@ const Menu = () => {
       </div>
       <ul className="menu--links">
         <li className={true ? "active" : ""}>
-          <FontAwesomeIcon icon={faCompass} /> &nbsp; Discover
+          <Link to="/" className="menu--link">
+            <FontAwesomeIcon icon={faCompass} /> &nbsp; Discover
+          </Link>
         </li>
         <li>
           <FontAwesomeIcon icon={faTv} /> &nbsp; My Movies
         </li>
         <br />
+        <li>
+          <Link to="/create-account" className="menu--link">
+            <FontAwesomeIcon icon={faUser} /> &nbsp; Create Account
+          </Link>
+        </li>
         <li>
           <FontAwesomeIcon icon={faUser} /> &nbsp; My Account
         </li>

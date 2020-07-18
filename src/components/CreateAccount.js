@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { API_URL } from "../constants";
+import "./form.css";
 
 class CreateAccount extends Component {
   state = {
@@ -9,6 +10,7 @@ class CreateAccount extends Component {
     email: "",
     password: "",
     confirmPassword: "",
+    user: {},
     loading: false,
   };
 
@@ -16,14 +18,38 @@ class CreateAccount extends Component {
     this.setState({ [e.target.id]: e.target.value });
   };
 
-  createAccount = async () => {
-    const url = `${API_URL}/api/users/create`;
+  createAccount = async (e) => {
+    e.preventDefault();
+    console.log("posting");
+    const { firstName, lastName, username, email, password } = this.state;
+    this.setState({ loading: true });
+    try {
+      const url = `${API_URL}/api/users/create`;
+      const body = {
+        firstName,
+        lastName,
+        username,
+        email,
+        password,
+      };
+      const options = {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(body),
+      };
+
+      let response = await fetch(url, options);
+      let data = await response.json();
+      this.setState({ user: data });
+    } catch (err) {
+      console.error(err);
+    }
   };
 
   render() {
     return (
       <div className="container">
-        <form className="form">
+        <form className="form" onSubmit={this.createAccount}>
           <h1 className="form--header">
             Register <span>Movie Me Account</span>
           </h1>
@@ -87,7 +113,9 @@ class CreateAccount extends Component {
             placeholder="Confirm Password"
             onChange={this.handleOnChange}
           />
-          <button className="form--button">Submit</button>
+          <button className="form--button" type="submit">
+            Submit
+          </button>
         </form>
       </div>
     );
